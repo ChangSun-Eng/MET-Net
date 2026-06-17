@@ -1,0 +1,15 @@
+The datasets in this directory (bilayer_target_OE.xlsx and bilayer_target_PE.xlsx)
+are licensed under the Creative Commons Attribution 4.0 International License
+(CC BY 4.0). The source code in this repository is licensed separately under MIT
+(see the top-level LICENSE file).
+
+You are free to share and adapt the data for any purpose, provided you give
+appropriate credit by citing:
+
+  C. Sun, H. Huo, Z. Wang, S. Zhang, Z. Li, Y. Xiang, J. Tan,
+  "MET-Net: An equivalent-section mechanism-guided neural framework for
+  explainable transfer learning in bilayer tube springback prediction under
+  data scarcity and incomplete physical mechanisms,"
+  Journal of Manufacturing Systems, 2026.
+
+Full licence text: https://creativecommons.org/licenses/by/4.0/legalcode

@@ -1,0 +1,4 @@
+network,quantity,RMSE,R2
+SE-Net,De,0.011,0.9999
+SE-Net,te,0.0419,0.999
+SLSP-Net,springback,0.4531,0.9106

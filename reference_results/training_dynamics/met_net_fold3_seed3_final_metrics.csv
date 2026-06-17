@@ -1,0 +1,2 @@
+fold,seed,best_val_rmse,test_rmse,test_r2,mean_uncertainty,final_ece,final_phys_active,final_calib_scale_a,final_calib_shift_b,final_slsp_drift_w,final_slsp_drift_b,physics_auc_final
+3,3,0.3527927167981186,0.4660638600578333,0.8671501907163487,0.16772763,0.1518682148307562,0.0,0.8440256714820862,-0.1583720743656158,0.0037813882809132,0.0014092475175857,0.0

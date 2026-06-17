@@ -1,0 +1,64 @@
+# MET-Net hyperparameters AS RUN to produce the published results.
+# These values are baked into the scripts as defaults; this file documents them in
+# one place. the values below are exactly those used to produce the published results.
+
+stage1_se_net:                 # scripts/train_se_net.py  (Section Equivalent Network)
+  adaptive_head: [6, 64, 64, 2]
+  activation: silu
+  E1_GPa: 120.0                # copper (reference layer)
+  E2_GPa: 69.0                 # aluminium
+  loss_weights: {theory: 0.1, physics: 0.5, reg: 1.0e-5}
+  n_synthetic_samples: 20000
+  test_split: 0.2
+  optimizer: adam
+  lr: 1.0e-3
+  weight_decay: 0.0
+  batch: full_batch
+  epochs: 500                  # fixed; manuscript: early-stop at dimensionless residual r* < 1e-3
+  lr_scheduler: {type: ReduceLROnPlateau, factor: 0.5, patience: 25}
+  dtype: float64
+  seed: 42
+  output: se_net_pretrained.pth
+
+stage1_slsp_net:               # scripts/train_slsp_net.py  (Single-Layer Springback Prediction)
+  mlp: [13, 256, 128, 64, 32, 1]
+  activation: relu
+  batchnorm: hidden_layers_1_3
+  dropout: 0.2
+  scaler: RobustScaler         # inputs and outputs
+  optimizer: adamw
+  lr: 1.0e-3
+  weight_decay: 1.0e-5
+  batch: 256
+  early_stopping_patience: 40
+  lr_scheduler: {type: ReduceLROnPlateau, factor: 0.5}
+  physics_collocation_weight: 0.1   # consistency to the tree ensemble (lambda_physics)
+  seed: 42
+  output: slsp_net_pretrained.pth
+
+stage2_met_net:                # scripts/train_met_net.py  (assembled MET-Net fine-tuning)
+  cross_validation: {n_splits: 5, n_seeds: 5, runs: 25}
+  held_out_test_size: 0.15     # fixed pre-split, random_state=42
+  warmup_epochs: 30
+  max_epochs: 1000
+  batch: 16
+  data_loss: {type: huber, beta: 0.4}      # Huber threshold 0.4 deg
+  physics:
+    kappa_f: 3.0               # tolerance multiplier on |delta_hat|
+    lambda_f_max: 1.0
+    ramp: "(max_epochs - warmup)//3"
+    application: uniform_mean  # paper Eq. 13 (no per-sample gate)
+  drift_penalty: {alpha_w: 1.0e-3, alpha_b: 1.0e-3}
+  calibrator_reg_weight: 0.01  # w_cal
+  optimizer:
+    warmup:  {type: adamw, se_net: {lr: 1.0e-4, wd: 1.0e-4}, calibrator: {lr: 1.0e-4, wd: 1.0e-4}}
+    main:    {type: adamw, se_net: {lr: 1.0e-4, wd: 1.0e-4}, calibrator: {lr: 1.0e-4, wd: 1.0e-4},
+              slsp_last_layer: {lr: 1.0e-6, wd: 1.0e-3}, monitor_calibrator: {lr: 1.0e-3, wd: 1.0e-3}}
+  grad_clip_norm: 1.0
+  early_stopping_patience: 50
+  global_seed: 20250928
+  dtype: float32
+  pdpm_monitor:                # passive DeepLIFT-attribution monitor (MAPD / PCAR / MCI)
+    indicators: [MAPD, PCAR, MCI]
+    mci_bins: 10
+  outputs: [met_net_ensemble.pkl, training_summary_metrics_met_net.csv]

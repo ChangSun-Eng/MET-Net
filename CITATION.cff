@@ -1,0 +1,45 @@
+cff-version: 1.2.0
+message: "If you use this software or data, please cite the article below."
+title: "MET-Net: mechanism-guided explainable transfer learning for bilayer tube springback prediction"
+type: software
+version: 1.0.0
+date-released: 2026-06-16
+license: MIT
+repository-code: "https://github.com/ChangSun-Eng/MET-Net"
+url: "https://github.com/ChangSun-Eng/MET-Net"
+authors:
+  - family-names: Sun
+    given-names: Chang
+  - family-names: Huo
+    given-names: Hong
+  - family-names: Wang
+    given-names: Zili
+  - family-names: Zhang
+    given-names: Shuyou
+  - family-names: Li
+    given-names: Zheyi
+  - family-names: Xiang
+    given-names: Yongzhe
+  - family-names: Tan
+    given-names: Jianrong
+preferred-citation:
+  type: article
+  title: "MET-Net: An equivalent-section mechanism-guided neural framework for explainable transfer learning in bilayer tube springback prediction under data scarcity and incomplete physical mechanisms"
+  journal: "Journal of Manufacturing Systems"
+  year: 2026
+  authors:
+    - family-names: Sun
+      given-names: Chang
+    - family-names: Huo
+      given-names: Hong
+    - family-names: Wang
+      given-names: Zili
+    - family-names: Zhang
+      given-names: Shuyou
+    - family-names: Li
+      given-names: Zheyi
+    - family-names: Xiang
+      given-names: Yongzhe
+    - family-names: Tan
+      given-names: Jianrong
+  notes: "Article DOI will be added upon publication."

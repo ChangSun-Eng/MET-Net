@@ -1,0 +1,36 @@
+# conda environment for MET-Net.
+#   conda env create -f environment.yml
+#   conda activate met-net
+#   pip install -e .
+#
+# This installs a default PyTorch build, which is sufficient (CPU) for every
+# reproduction command (reproduce_tables / run_ablation / run_epe / figures /
+# explainability run in minutes on CPU). For GPU training, replace the torch line with a
+# CUDA build, e.g.:
+#   pip install torch==2.6.0 --index-url https://download.pytorch.org/whl/cu126
+# Reported results were produced with torch 2.6.0 + CUDA 12.6 on an NVIDIA RTX 4060.
+name: met-net
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      - torch==2.6.0
+      - numpy==1.26.4
+      - pandas==2.3.2
+      - scikit-learn==1.7.2
+      - scipy==1.15.3
+      - captum==0.8.0
+      - shap==0.49.1
+      - matplotlib==3.10.6
+      - seaborn==0.13.2
+      - openpyxl==3.1.5
+      - joblib==1.5.2
+      - tqdm==4.67.1
+      # Optional, Stage-1 SLSP-Net tree-guided pretraining only:
+      - xgboost
+      - lightgbm

@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "metnet"
+version = "1.0.0"
+description = "MET-Net: mechanism-guided explainable transfer learning for bilayer tube springback prediction"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Chang Sun" }]
+dependencies = [
+    "torch>=2.0",
+    "numpy>=1.26,<2.0",
+    "pandas>=2.0",
+    "scikit-learn>=1.3",
+    "scipy>=1.10",
+    "captum>=0.7",
+    "shap>=0.44",
+    "matplotlib>=3.7",
+    "seaborn>=0.13",
+    "openpyxl>=3.1",
+    "joblib>=1.3",
+    "tqdm>=4.65",
+]
+
+[project.urls]
+Repository = "https://github.com/ChangSun-Eng/MET-Net"
+
+[tool.setuptools.packages.find]
+where = ["src"]
