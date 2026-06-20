@@ -13,6 +13,7 @@ This repository contains the **source code and reproducibility package** for:
 > *MET-Net: An equivalent-section mechanism-guided neural framework for explainable
 > transfer learning in bilayer tube springback prediction under data scarcity and
 > incomplete physical mechanisms.* Journal of Manufacturing Systems, 2026.
+> https://doi.org/10.1016/j.jmsy.2026.06.003
 
 On a copper-aluminium rotary-draw-bending case, MET-Net attains a **median test RMSE of
 0.4835 degrees** using only 100 bilayer samples, approaching a single-layer baseline

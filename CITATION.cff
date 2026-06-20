@@ -27,6 +27,7 @@ preferred-citation:
   title: "MET-Net: An equivalent-section mechanism-guided neural framework for explainable transfer learning in bilayer tube springback prediction under data scarcity and incomplete physical mechanisms"
   journal: "Journal of Manufacturing Systems"
   year: 2026
+  doi: 10.1016/j.jmsy.2026.06.003
   authors:
     - family-names: Sun
       given-names: Chang
@@ -42,4 +43,3 @@ preferred-citation:
       given-names: Yongzhe
     - family-names: Tan
       given-names: Jianrong
-  notes: "Article DOI will be added upon publication."

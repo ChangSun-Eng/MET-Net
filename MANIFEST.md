@@ -11,11 +11,11 @@ The 25-model (5-fold x 5-seed) ensemble `models/met_net_ensemble.pkl` is include
 | File | Bytes | SHA-256 (first 16) |
 |---|---:|---|
 | `.gitignore` | 398 | `7f892ef63575900e` |
-| `CITATION.cff` | 1421 | `4fc8c3386334b2e3` |
+| `CITATION.cff` | 1400 | `ddefbcd731a8b810` |
 | `LICENSE` | 1400 | `5eeb59d4a7d12d86` |
-| `README.md` | 7138 | `33b574b00a89fc71` |
+| `README.md` | 7183 | `5cabc346dd3e8f89` |
 | `configs/met_net.yaml` | 2665 | `78e7618d91a5ab1e` |
-| `data/LICENSE.txt` | 763 | `4e478607284a44be` |
+| `data/LICENSE.txt` | 808 | `0a333656d1da76ca` |
 | `data/bilayer_target_OE.xlsx` | 26227 | `c465c51ff2947077` |
 | `data/bilayer_target_PE.xlsx` | 18869 | `42fea9c7612b2054` |
 | `docs/data_availability_statement.md` | 1571 | `d980414cf3988294` |
