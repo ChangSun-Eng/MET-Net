@@ -11,5 +11,6 @@ appropriate credit by citing:
   explainable transfer learning in bilayer tube springback prediction under
   data scarcity and incomplete physical mechanisms,"
   Journal of Manufacturing Systems, 2026.
+  https://doi.org/10.1016/j.jmsy.2026.06.003
 
 Full licence text: https://creativecommons.org/licenses/by/4.0/legalcode
